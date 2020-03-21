@@ -5,11 +5,13 @@
     <aside class="categories">
         <h2 class="categories__title">Categorias</h2>
         <ul class="categories__list">
+            @foreach ($categories as $category)
             <li class="categories__item">
-                <a href="#" class="categories__link">Lorem </a>
+                <a href="#" class="categories__link">{{$category->name}}</a>
             </li>
+            @endforeach
             <li class="categories__item">
-                <a href="#" class="categories__link">ipsum </a>
+                <a href="#" class="categories__link">Ver todas categorias</a>
             </li>
         </ul>
     </aside>

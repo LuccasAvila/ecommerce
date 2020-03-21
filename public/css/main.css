@@ -131,7 +131,7 @@ ul {
 
 .categories__link {
     display: block;
-    padding: 12px 8px;
+    padding: 11px 8px;
 }
 
 .categories__item {
@@ -141,6 +141,7 @@ ul {
 
 .categories__item:last-of-type {
     border-bottom: none;
+    color: #1F2232;
 }
 
 /* Banner */
