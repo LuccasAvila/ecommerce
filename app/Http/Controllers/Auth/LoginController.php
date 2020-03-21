@@ -24,7 +24,7 @@ class LoginController extends Controller
             ->withInput();
         }
 
-        if(Auth::attempt($credentials)) {
+        if(Auth::attempt($credentials, true)) {
             return redirect()->intended(route('home'));
         } else {
             $validator->errors()->add('password', 'E-mail ou/e senha incorretos');

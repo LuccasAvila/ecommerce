@@ -19,8 +19,12 @@
                 </div>
                 <div class="navbar__top-left">
                     <div class="navbar__info">
+                        @auth
+                        <a class="text--secondary" href="{{route('login')}}">Minha conta</a>
+                        @else
                         <a class="text--secondary" href="{{route('login')}}">Entrar</a> ou
                         <a class="text--secondary" href="#"> cadastrar</a>
+                        @endauth
                     </div>
                 </div>
             </div>
