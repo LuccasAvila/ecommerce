@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Ecommerce')</title>
+    <title>@yield('title', 'Home') | Ecommerce</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     <script defer src="/js/all.min.js"></script>
@@ -19,15 +19,17 @@
                 </div>
                 <div class="navbar__top-left">
                     <div class="navbar__info">
-                        <span class="text--secondary">Entrar</span> ou
-                        <span class="text--secondary"> cadastrar</span>
+                        <a class="text--secondary" href="{{route('login')}}">Entrar</a> ou
+                        <a class="text--secondary" href="#"> cadastrar</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="navbar__content container">
             <div class="navbar__logo">
-                <h1 class="navbar__logo-text"><span class="text--secondary">E</span>COMMERCE</h1>
+                <a href="{{route('home')}}">
+                    <h1 class="navbar__logo-text"><span class="text--secondary">E</span>COMMERCE</h1>
+                </a>
             </div>
             <div class="search">
                 <input placeholder="Pesquisar..." class="search__input" type="text">
