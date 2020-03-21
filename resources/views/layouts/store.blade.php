@@ -39,7 +39,7 @@
                 <input placeholder="Pesquisar..." class="search__input" type="text">
                 <button class="search__button" type="submit"><span class="fas fa-search"></span></button>
             </div>
-            <a href="#" class="navbar__cart">
+            <a href="{{route('cart.index')}}" class="navbar__cart">
                 <div class="cart__icon">
                     <span class="fas fa-shopping-cart"></span>
                 </div>

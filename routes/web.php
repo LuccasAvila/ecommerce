@@ -23,3 +23,7 @@ Route::group(['middleware' => ['guest']], function() {
 Route::prefix('admin')->group(function() {
     Route::get('/', 'Admin\\HomeController@index')->middleware('auth');
 });
+
+Route::prefix('cart')->name('cart.')->group(function() {
+    Route::get('/', 'CartController@index')->name('index');
+});
