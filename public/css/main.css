@@ -187,6 +187,12 @@ ul {
 .categories__link {
     display: block;
     padding: 11px 8px;
+    background: #fff;
+    transition: .4s;
+}
+
+.categories__link:hover {
+    background: #f6f6f6;
 }
 
 .categories__item {
@@ -297,11 +303,20 @@ ul {
 .products__add-cart {
     font-size: 1rem;
     background: #FACF5A;
+    color: #333;
     border: none;
     padding: 8px 16px;
     margin-top: 8px;
     margin-bottom: 16px;
+    transition: .4s;
 }
+
+.products__add-cart:hover {
+    background: #1F2232;
+    color: #FACF5A;
+    cursor: pointer;
+}
+
 
 .products__add-icon {
     margin-right: 8px;
