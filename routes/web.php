@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/login', 'Auth\\LoginController@index')->name('login');
-Route::post('/login', 'Auth\\LoginController@doLogin')->name('doLogin');
+Route::group(['middleware' => ['guest']], function() {
+    Route::get('/login', 'Auth\\LoginController@index')->name('login');
+    Route::post('/login', 'Auth\\LoginController@doLogin')->name('doLogin');
+});
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'Admin\\HomeController@index')->middleware('auth');
