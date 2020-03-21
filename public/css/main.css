@@ -21,6 +21,10 @@ a {
     color: inherit;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* Navbar */
 .navbar {
     background: #1F2232;
@@ -97,4 +101,43 @@ a {
 .cart__icon {
     font-size: 2.25rem;
     margin-right: 8px;
+}
+
+/* Header */
+
+.header {
+    margin-top: 48px;
+    display: flex;
+}
+
+.categories {
+    max-width: 260px;
+    width: 100%;
+}
+
+.categories__title {
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    color: #333;
+    background: #FACF5A;
+    padding: 16px;
+    border-radius: 8px 8px 0 0;
+}
+
+.categories__list {
+    border: 1px solid #c6c6c6;
+}
+
+.categories__link {
+    display: block;
+    padding: 12px 8px;
+}
+
+.categories__item {
+    border-bottom: 1px solid #c6c6c6;
+
+}
+
+.categories__item:last-of-type {
+    border-bottom: none;
 }
