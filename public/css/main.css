@@ -108,6 +108,7 @@ ul {
 .header {
     margin-top: 48px;
     display: flex;
+    justify-content: space-between;
 }
 
 .categories {
@@ -140,4 +141,43 @@ ul {
 
 .categories__item:last-of-type {
     border-bottom: none;
+}
+
+/* Banner */
+.banner {
+    max-width: 840px;
+    width: 100%;
+}
+
+/* Cards */
+.cards {
+    margin: 48px 0;
+}
+
+.cards__list  {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards__item {
+    background: #1F2232;
+    color: #FACF5A;
+    border-radius: 4px;
+    padding: 16px 8px;
+    display: flex;
+    max-width: 260px;
+}
+
+.cards__icon {
+    font-size: 3rem;
+    margin-right: 16px;
+}
+
+.cards__title {
+    font-size: 1.125rem;
+}
+
+.cards__text {
+    color: #fff;
+    font-size: 0.875rem;
 }
