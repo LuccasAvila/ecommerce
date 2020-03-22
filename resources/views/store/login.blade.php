@@ -14,13 +14,20 @@
                 <div class="input__control">
                     <label class="input__label">E-mail</label>
                     <input class="input" placeholder="E-mail" name="email" type="email" value="{{old('email')}}"/>
+                    @error('email')
+                    <div class="input__error">
+                        {{ $message }}
+                    </div>
+                    @enderror
                 </div>
                 <div class="input__control">
                     <label class="input__label">Senha</label>
                     <input class="input" placeholder="********" name="password" type="password" value="{{old('password')}}"/>
+                    @error('password')
                     <div class="input__error">
-                        {{ $errors->first('password') }}
+                        {{ $message }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__actions">
                     <a class="form__action" href="#">Esqueci minha senha</a>
