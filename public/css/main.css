@@ -50,6 +50,21 @@ ul {
 
 .button {
     padding: 12px 32px;
+    display: inline-block;
+}
+
+.button--primary {
+    background: #1F2232;
+    color: #FACF5A;
+    font-weight: bold;
+    border: none;
+    transition: .4s;
+}
+
+.button--primary:hover {
+    background: #FACF5A;
+    color: #1F2232;
+    cursor: pointer;
 }
 
 .button--secondary {
@@ -339,4 +354,65 @@ ul {
     padding: 16px;
     border: 1px solid #c6c6c6;
     border-top: 0;
+}
+
+.section__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+
+.section__footer {
+    text-align: right;
+}
+
+/* Cart */
+.cart__list {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.cart__body {
+    margin-top: 16px;
+}
+
+.cart__total {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-bottom: 32px;
+    background: #fff;
+}
+
+.cart__total td {
+    border: 1px solid #c6c6c6;
+    padding: 8px 24px;
+}
+
+.cart__header th {
+    padding: 8px 0;
+}
+
+.cart__list td, .cart__list th {
+    border: 1px solid #c6c6c6;
+}
+
+.coupon {
+    display: flex;
+}
+
+.coupon__input {
+    max-width: 260px;
+    width: 100%;
+    flex: 0 0 260px;
+    border: 1px solid #c6c6c6;
+    border-radius: 4px 0 0 4px;
+    padding: 8px 16px;
+}
+
+.coupon__button {
+    border-radius: 0 4px 4px 0;
+    border: none;
+    padding: 4px 16px;
 }
