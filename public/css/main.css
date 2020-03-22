@@ -306,6 +306,7 @@ ul {
     color: #1F2232;
     text-transform: uppercase;
     font-size: 1rem;
+    display: block;
 }
 
 .products__price {
@@ -415,4 +416,27 @@ ul {
     border-radius: 0 4px 4px 0;
     border: none;
     padding: 4px 16px;
+}
+
+
+/* Product */
+.section__wrapper {
+    display: flex;
+}
+
+.section__right {
+    margin-left: 32px;
+}
+
+.products__details {
+    margin-top: 16px;
+}
+
+.products__details-title {
+    margin-bottom: 8px;
+    color: #1F2232;
+}
+
+.products__detail {
+    color: #333;
 }

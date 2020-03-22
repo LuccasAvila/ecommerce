@@ -12,4 +12,8 @@ class HomeController extends Controller
         $categories = $categories->limit(7)->orderBy('id', 'DESC')->get();
         return view('store.home', compact('categories'));
     }
+
+    public function show($slug) {
+        return view('store.product');
+    }
 }

@@ -66,10 +66,12 @@
         <h1 class="products__section-title">Novos Produtos</h1>
         <ul class="products__list">
             <li class="products__item">
-                <img class="products__image" src="https://via.placeholder.com/260" alt="Product">
+                <a href="{{route('product', ['slug' => 'teste'])}}">
+                    <img class="products__image" src="https://via.placeholder.com/260" alt="Product">
+                </a>
                 <div class="products__info">
                     <p class="products__category">Categoria</p>
-                    <p class="products__title">Lorem ipsum</p>
+                    <a href="{{route('product', ['slug' => 'teste'])}}" class="products__title">Lorem ipsum</a>
                     <p class="products__price">R$ 00,00</p>
                 </div>
                 <button class="products__add-cart">
