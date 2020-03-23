@@ -22,7 +22,7 @@
                 </div>
                 <div class="input__control">
                     <label class="input__label">Senha</label>
-                    <input class="input" placeholder="********" name="password" type="password" value="{{old('password')}}"/>
+                    <input class="input" placeholder="********" name="password" type="password"/>
                     @error('password')
                     <div class="input__error">
                         {{ $message }}
