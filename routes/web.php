@@ -21,8 +21,9 @@ Route::group(['middleware' => ['guest']], function() {
     Route::post('/login', 'Auth\\LoginController@doLogin')->name('doLogin');
 });
 
-Route::prefix('admin')->group(function() {
-    Route::get('/', 'Admin\\HomeController@index')->middleware('auth');
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('/', 'Admin\\HomeController@index')->name('index');
+    Route::resource('products', 'ProductsController');
 });
 
 Route::prefix('cart')->name('cart.')->group(function() {

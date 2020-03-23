@@ -17,8 +17,8 @@
                 </h1>
             </div>
             <ul class="navbar__links">
-                <li><a class="navbar__link" href="#">Pedidos</a></li>
-                <li><a class="navbar__link" href="#">Produtos</a></li>
+                <li><a class="navbar__link" href="{{route('admin.index')}}">Pedidos</a></li>
+                <li><a class="navbar__link" href="{{route('admin.products.index')}}">Produtos</a></li>
                 <li><a class="navbar__link" href="#">Usuários</a></li>
             </ul>
         </div>

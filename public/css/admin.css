@@ -64,6 +64,9 @@ a {
 .section__title {
     color: #1F2232;
     margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .section__table {
@@ -96,4 +99,15 @@ a {
     background: #FACF5A;
     color: #1F2232;
     border: 2px solid #1F2232;
+}
+
+.button {
+    border: none;
+    padding: 8px;
+    display: inline-block;
+}
+
+.button--primary {
+    background: #1F2232;
+    color: #fff;
 }
