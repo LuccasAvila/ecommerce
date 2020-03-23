@@ -56,3 +56,44 @@ a {
 .navbar__link:hover {
     border-bottom: 4px solid #FACF5A;
 }
+
+.section {
+    margin-top: 48px;
+}
+
+.section__title {
+    color: #1F2232;
+    margin-bottom: 16px;
+}
+
+.section__table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.table__header {
+    background-color: #1F2232;
+    color: #FACF5A;
+}
+
+.section__table td, .section__table th {
+    padding: 12px;
+}
+
+.section__table tr + tr {
+    background-color: #f6f6f6;
+}
+
+.table__action {
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.table__action--primary {
+    background: #FACF5A;
+    color: #1F2232;
+    border: 2px solid #1F2232;
+}
