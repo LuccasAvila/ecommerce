@@ -25,6 +25,70 @@ a {
     color: #FACF5A;
 }
 
+.input {
+    display: block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    min-width: 280px;
+    max-width: 340px;
+    width: 100%;
+    border: 1px solid #c6c6c6;
+}
+
+.input__control {
+    margin-top: 8px;
+}
+
+.input__label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.input__error {
+    color: #F95959;
+}
+
+.button {
+    border: none;
+    padding: 8px;
+    display: inline-block;
+}
+
+
+.button--primary {
+    background: #1F2232;
+    color: #FACF5A;
+    font-weight: bold;
+    border: none;
+    transition: .4s;
+}
+
+.button--primary:hover {
+    background: #FACF5A;
+    color: #1F2232;
+    cursor: pointer;
+}
+
+.button--secondary {
+    background: #FACF5A;
+    color: #333;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border: none;
+    transition: .4s;
+}
+
+.button--secondary:hover {
+    background: #1F2232;
+    color: #FACF5A;
+    cursor: pointer;
+}
+
+.button--form {
+    margin-top: 16px;
+}
+
 .navbar {
     background-color: #1F2232;
     color: #fff;
@@ -99,15 +163,4 @@ a {
     background: #FACF5A;
     color: #1F2232;
     border: 2px solid #1F2232;
-}
-
-.button {
-    border: none;
-    padding: 8px;
-    display: inline-block;
-}
-
-.button--primary {
-    background: #1F2232;
-    color: #fff;
 }

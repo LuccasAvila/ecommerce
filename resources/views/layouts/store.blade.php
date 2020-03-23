@@ -10,6 +10,13 @@
 </head>
 <body>
     <nav class="navbar">
+        @error('permission')
+        <div class="navbar__error">
+            <div class="container">
+                {{ $message }}
+            </div>
+        </div>
+        @enderror
         <div class="navbar__top">
             <div class="navbar__top-content container">
                 <div class="navbar__top-left">

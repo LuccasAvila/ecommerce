@@ -22,8 +22,6 @@ Route::group(['middleware' => ['guest']], function() {
 });
 
 Route::prefix('admin')->name('admin.')->group(function() {
-    Route::get('/login', 'Admin\\Auth\\LoginController@index')->name('login');
-
     Route::group(['middleware' => ['auth', 'admin']], function() {
         Route::get('/', 'Admin\\HomeController@index')->name('index');
         Route::resource('products', 'ProductsController');

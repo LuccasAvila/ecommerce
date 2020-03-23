@@ -101,6 +101,15 @@ ul {
     color: #fff;
 }
 
+.navbar__error {
+    background: #F95959;
+    color: #1F2232;
+    font-weight: bold;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+
 .navbar__top {
     background: #2A2D3C;
     padding: 8px;

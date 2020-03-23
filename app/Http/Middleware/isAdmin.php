@@ -19,6 +19,7 @@ class isAdmin
             return $next($request);
         }
 
-        return redirect()->route('admin.login');
+        return redirect()->back()
+        ->withErrors(['permission' => ['Você não está logado em uma conta administrativa!']]);
     }
 }
