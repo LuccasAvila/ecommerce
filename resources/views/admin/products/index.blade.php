@@ -27,7 +27,9 @@
             <tr>
                 <td>{{$product->id}}</td>
                 <td>
+                @if($product->photos()->exists())
                 <img class="products__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->description}}">
+                @endif
                 </td>
                 <td>{{$product->name}}</td>
                 <td>R$ {{$product->price}}</td>
