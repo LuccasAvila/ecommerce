@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 use App\Category;
+use App\Product;
 
 class ProductsController extends Controller
 {
@@ -25,19 +27,28 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::all(['id', 'name']);
         return view('admin.products.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $data = $request->all();
+        $product = Product::create($data);
+        $product->categories()->sync($data['categories']);
+
+        if($request->hasFile('files')) {
+            $images = $this->uploadPhoto($request->file('files'), 'image');
+            $product->photos()->createMany($images);
+        }
+
+        return redirect()->route('admin.products.index');
     }
 
     /**
@@ -65,11 +76,11 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ProductRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         //
     }
@@ -83,5 +94,15 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    protected function uploadPhoto($images, $column) {
+        $uploadedPhotos = [];
+
+        foreach($images as $image) {
+            $uploadedPhotos[] = [$column => $image->store('products', 'public')];
+        }
+
+        return $uploadedPhotos;
     }
 }

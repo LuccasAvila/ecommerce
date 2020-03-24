@@ -2,7 +2,8 @@
 
 @section('title', 'Novo Produto')
 @section('content')
-    <div class="section container">
+    <form action="{{route('admin.products.store')}}" method="POST" enctype="multipart/form-data" class="section container">
+        @csrf
         <div class="section__title">
             <h1>Novo produto</h1>
         </div>
@@ -45,7 +46,7 @@
             </div>
             <div class="input__control">
                 <label class="input__label">Categorias</label>
-                <select class="input" name="categories" multiple>
+                <select class="input" name="categories[]" multiple>
                     @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
@@ -76,5 +77,5 @@
             </div>
             <button class="button button--secondary button--form">Salvar produto</button>
         </div>
-    </div>
+    </form>
 @endsection
