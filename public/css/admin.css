@@ -120,6 +120,10 @@ a {
     border-bottom: 4px solid #FACF5A;
 }
 
+.navbar__link--active {
+    border-bottom: 4px solid #FACF5A;
+}
+
 .section {
     margin-top: 48px;
 }
