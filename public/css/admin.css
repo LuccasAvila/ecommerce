@@ -151,7 +151,7 @@ a {
     padding: 12px;
 }
 
-.section__table tr + tr {
+.section__table tbody tr:nth-child(even) {
     background-color: #f6f6f6;
 }
 
@@ -160,6 +160,7 @@ a {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    display: inline-block;
 }
 
 .table__action--primary {
@@ -198,4 +199,43 @@ a {
 .page-item.disabled {
     background: #4b506b;
     color: #FACF5A;
+}
+
+.product__images {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.product__delete-image {
+    width: 240px;
+    height: 240px;
+    background-color: #1F2232;
+    margin-right: 16px;
+    border: none;
+}
+
+.delete {
+    display: none;
+}
+
+.product__delete-image:hover .delete {
+    display: block;
+    background-color: rgba(0,0,0,.3);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete span {
+    font-size: 2rem;
+}
+
+.product__delete-image:hover .delete span {
+    padding: 10px 20px;
+    border-radius: 32px;
+    background: #fff;
 }

@@ -25,6 +25,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::group(['middleware' => ['auth', 'admin']], function() {
         Route::get('/', 'Admin\\HomeController@index')->name('index');
         Route::resource('products', 'Admin\\ProductsController');
+        Route::post('/productPhoto/delete', 'Admin\\ProductPhotoController@destroy')->name('productPhoto.delete');
     });
 });
 

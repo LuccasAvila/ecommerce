@@ -71,7 +71,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $categories = Category::all(['id', 'name']);
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -83,7 +85,17 @@ class ProductsController extends Controller
      */
     public function update(ProductRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $product = Product::find($id);
+        $product->update($data);
+        $product->categories()->sync($data['categories']);
+
+        if($request->hasFile('files')) {
+            $images = $this->uploadPhoto($request->file('files'), 'image');
+            $product->photos()->createMany($images);
+        }
+
+        return redirect()->route('admin.products.index');
     }
 
     /**

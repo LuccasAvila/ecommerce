@@ -34,7 +34,7 @@
                 <td><span class="fas fa-check"></span></td>
                 <td><span class="fas fa-times"></span></td>
                 <td>
-                    <button class="table__action table__action--primary"><span class="fas fa-pen"></span></button>
+                    <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="table__action table__action--primary"><span class="fas fa-pen"></span></a>
                 </td>
             </tr>
             @endforeach
