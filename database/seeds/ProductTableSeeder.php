@@ -13,6 +13,7 @@ class ProductTableSeeder extends Seeder
     {
         factory(\App\Product::class, 10)->create()->each(function($product) {
             $product->categories()->save(factory(App\Category::class)->make());
+            $product->photos()->create(['image' => '']);
         });
     }
 }

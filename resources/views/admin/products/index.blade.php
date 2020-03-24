@@ -23,18 +23,23 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($products as $product)
             <tr>
-                <td>1</td>
-                <td><img src="https://via.placeholder.com/72" alt="Product"></td>
-                <td>Lorem ipsum dolor sit amet.</td>
-                <td>R$ 0,00</td>
+                <td>{{$product->id}}</td>
+                <td>
+                <img class="products__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->description}}">
+                </td>
+                <td>{{$product->name}}</td>
+                <td>R$ {{$product->price}}</td>
                 <td><span class="fas fa-check"></span></td>
                 <td><span class="fas fa-times"></span></td>
                 <td>
                     <button class="table__action table__action--primary"><span class="fas fa-pen"></span></button>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
+    {{$products}}
 </div>
 @endsection
