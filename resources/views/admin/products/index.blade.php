@@ -6,7 +6,7 @@
 <div class="section container">
     <div class="section__title">
         <h1>Produtos</h1>
-        <a class="button button--primary" href="#">
+        <a class="button button--primary" href="{{route('admin.products.create')}}">
             <span class="fas fa-plus"></span> Adicionar novo
         </a>
     </div>
