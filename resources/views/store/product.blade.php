@@ -23,9 +23,22 @@
                         <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
                         <p class="products__description">{{$product->description}}</p>
                     </div>
-                    <button class="products__add-cart">
-                        <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
-                    </button>
+                    <form method="POST" action="{{route('cart.add')}}">
+                        @csrf
+                        <input type="hidden" name="product[id]" value="{{$product->id}}">
+                        <div class="input__control input__control--mini">
+                            <label class="input__label">Quantidade</label>
+                            <input class="input" placeholder="1" name="product[amount]" type="number" min="1" max="10" default="1" value="{{old('product[amount]')}}"/>
+                            @error('product[amount]')
+                            <div class="input__error">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <button class="products__add-cart">
+                            <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="products__details">

@@ -39,6 +39,10 @@ ul {
     margin-top: 8px;
 }
 
+.input__control--mini {
+    max-width: 90px;
+}
+
 .input__label {
     display: block;
     margin-bottom: 4px;
