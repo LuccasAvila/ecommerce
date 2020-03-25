@@ -68,7 +68,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = $this->category->findOrFail($id);
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -80,7 +81,11 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $category = $this->category->findOrFail($id);
+        $category->update($data);
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -91,6 +96,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = $this->category->find();
+        $category->delete();
     }
 }
