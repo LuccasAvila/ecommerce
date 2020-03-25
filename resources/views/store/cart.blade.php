@@ -33,7 +33,7 @@
                         <td>R$ {{number_format($item->price, 2, ',', '.')}}</td>
                         <td>{{$item->amount}}</td>
                         <td>R$ {{number_format($subtotal, 2, ',', '.')}}</td>
-                        <td><a href="#"><span class="fas fa-trash"></span></a></td>
+                        <td><a href="{{route('cart.remove', ['product' => $item->id])}}"><span class="fas fa-trash"></span></a></td>
                     </tr>
                     @endforeach
                 </tbody>

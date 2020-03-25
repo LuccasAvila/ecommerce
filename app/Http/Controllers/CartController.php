@@ -11,8 +11,8 @@ class CartController extends Controller
         $cart = [];
         if(session()->has('cart')) {
             foreach(session()->get('cart') as $product) {
-                $item = Product::find($product['product']['id']);
-                $item['amount'] = $product['product']['amount'];
+                $item = Product::find($product['id']);
+                $item['amount'] = $product['amount'];
                 array_push($cart, $item);
             }
         }
@@ -21,7 +21,7 @@ class CartController extends Controller
     }
 
     public function add(Request $request) {
-        $product = $request->all();
+        $product = $request->get('product');
 
         if(session()->has('cart')) {
             session()->push('cart', $product);

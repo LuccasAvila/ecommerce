@@ -28,7 +28,7 @@
                         <input type="hidden" name="product[id]" value="{{$product->id}}">
                         <div class="input__control input__control--mini">
                             <label class="input__label">Quantidade</label>
-                            <input class="input" placeholder="1" name="product[amount]" type="number" min="1" max="10" default="1" value="{{old('product[amount]')}}"/>
+                            <input class="input" placeholder="1" name="product[amount]" required type="number" min="1" max="10" default="1" value="{{old('product[amount]')}}"/>
                             @error('product[amount]')
                             <div class="input__error">
                                 {{ $message }}

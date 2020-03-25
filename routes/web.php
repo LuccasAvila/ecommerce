@@ -24,6 +24,7 @@ Route::group(['middleware' => ['guest']], function() {
 Route::prefix('cart')->name('cart.')->group(function() {
     Route::get('/', 'CartController@index')->name('index');
     Route::post('/add', 'CartController@add')->name('add');
+    Route::get('/remove/{product}', 'CartController@remove')->name('remove');
 });
 
 Route::prefix('admin')->name('admin.')->group(function() {
