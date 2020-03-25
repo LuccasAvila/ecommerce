@@ -31,4 +31,18 @@ class CartController extends Controller
 
         return redirect()->back();
     }
+
+
+    public function remove($id) {
+        if(session()->has('cart')) {
+            $cart = session()->get('cart');
+            $cart = array_filter($cart, function($item) use($id) {
+                return $item['id'] !== $id;
+            });
+            session()->put('cart', $cart);
+        }
+
+
+        return redirect()->route('cart.index');
+    }
 }
