@@ -20,13 +20,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $total = 0;
+                    @endphp
+                    @foreach ($cart as $item)
+                    @php
+                        $subtotal = $item->price * $item->amount;
+                        $total += $subtotal;
+                    @endphp
                     <tr>
-                        <td><img src="https://via.placeholder.com/72" alt="Product"></td>
-                        <td>R$ 15,00</td>
-                        <td>1</td>
-                        <td>R$ 15,00</td>
+                        <td><img class="cart__image" src="{{asset('storage/'.$item->photos()->first()->image)}}" alt="Product"></td>
+                        <td>R$ {{number_format($item->price, 2, ',', '.')}}</td>
+                        <td>{{$item->amount}}</td>
+                        <td>R$ {{number_format($subtotal, 2, ',', '.')}}</td>
                         <td><a href="#"><span class="fas fa-trash"></span></a></td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
             <div class="section__row">
@@ -40,12 +49,8 @@
                 <table class="cart__total">
                     <tbody>
                         <tr>
-                            <td>Subtotal</td>
-                            <td>R$ 0,00</td>
-                        </tr>
-                        <tr>
                             <td>Total</td>
-                            <td>R$ 0,00</td>
+                            <td>R$ {{number_format($total, 2, ',', '.')}}</td>
                         </tr>
                     </tbody>
                 </table>

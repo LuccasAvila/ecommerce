@@ -412,6 +412,12 @@ ul {
     border: 1px solid #c6c6c6;
 }
 
+.cart__image {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+}
+
 .coupon {
     display: flex;
 }
@@ -467,3 +473,4 @@ ul {
     height: 260px;
     object-fit: cover;
 }
+

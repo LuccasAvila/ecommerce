@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class CartController extends Controller
 {
     public function index() {
-        return view('store.cart');
+        $cart = [];
+        if(session()->has('cart')) {
+            foreach(session()->get('cart') as $product) {
+                $item = Product::find($product['product']['id']);
+                $item['amount'] = $product['product']['amount'];
+                array_push($cart, $item);
+            }
+        }
+
+        return view('store.cart', compact('cart'));
     }
 
     public function add(Request $request) {
