@@ -65,19 +65,21 @@
     <div class="container">
         <h1 class="products__section-title">Novos Produtos</h1>
         <ul class="products__list">
+            @foreach($newProducts as $product)
             <li class="products__item">
-                <a href="{{route('product', ['slug' => 'teste'])}}">
+                <a href="{{route('product', ['slug' => $product->slug])}}">
                     <img class="products__image" src="https://via.placeholder.com/260" alt="Product">
                 </a>
                 <div class="products__info">
-                    <p class="products__category">Categoria</p>
-                    <a href="{{route('product', ['slug' => 'teste'])}}" class="products__title">Lorem ipsum</a>
-                    <p class="products__price">R$ 00,00</p>
+                    <p class="products__category">{{$product->categories()->first()->name}}</p>
+                    <a href="{{route('product', ['slug' => $product->slug])}}" class="products__title">{{$product->name}}</a>
+                    <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
                 </div>
                 <button class="products__add-cart">
                     <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
                 </button>
             </li>
+            @endforeach
         </ul>
     </div>
 </section>

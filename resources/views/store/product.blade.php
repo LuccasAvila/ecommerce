@@ -17,6 +17,7 @@
                         <p class="products__category">Categoria</p>
                         <h1 href="{{route('product', ['slug' => 'teste'])}}" class="products__title">Lorem ipsum</h1>
                         <p class="products__price">R$ 00,00</p>
+                        <p class="products__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat expedita doloribus, deleniti atque illo quibusdam soluta quo perferendis eligendi doloremque!</p>
                     </div>
                     <button class="products__add-cart">
                         <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho

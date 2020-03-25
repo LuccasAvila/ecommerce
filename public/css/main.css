@@ -449,3 +449,11 @@ ul {
 .products__detail {
     color: #333;
 }
+
+.products__description {
+    color: #333;
+    max-width: 360px;
+    width: 100%;
+    text-align: justify;
+    margin: 8px 0;
+}
