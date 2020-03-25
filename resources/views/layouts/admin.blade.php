@@ -25,7 +25,7 @@
                     <a class="navbar__link @if(request()->is('admin/products*')) navbar__link--active @endif" href="{{route('admin.products.index')}}">Produtos</a>
                 </li>
                 <li>
-                    <a class="navbar__link @if(request()->is('admin/users*')) navbar__link--active @endif" href="#">Usuários</a>
+                    <a class="navbar__link @if(request()->is('admin/categories*')) navbar__link--active @endif" href="{{route('admin.categories.index')}}">Categorias</a>
                 </li>
                 @else
                 <li><a class="navbar__link" href="{{route('admin.login')}}">Entrar</a></li>
