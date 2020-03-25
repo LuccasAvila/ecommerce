@@ -10,14 +10,18 @@
         <div class="section__content">
             <div class="section__wrapper">
                 <div class="section__left">
-                    <img src="https://via.placeholder.com/260" alt="Product">
+                    @if($product->photos()->first()->image)
+                    <img class="product__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->name}}">
+                    @else
+                    <img class="product__image" src="https://via.placeholder.com/260" alt="{{$product->name}}">
+                    @endif
                 </div>
                 <div class="section__right">
                     <div class="products__info">
-                        <p class="products__category">Categoria</p>
-                        <h1 href="{{route('product', ['slug' => 'teste'])}}" class="products__title">Lorem ipsum</h1>
-                        <p class="products__price">R$ 00,00</p>
-                        <p class="products__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat expedita doloribus, deleniti atque illo quibusdam soluta quo perferendis eligendi doloremque!</p>
+                        <p class="products__category">{{$product->categories()->first()->name}}</p>
+                        <h1 href="{{route('product', ['slug' => 'teste'])}}" class="products__title">{{$product->name}}</h1>
+                        <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
+                        <p class="products__description">{{$product->description}}</p>
                     </div>
                     <button class="products__add-cart">
                         <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
@@ -26,7 +30,7 @@
             </div>
             <div class="products__details">
                 <h3 class="products__details-title">Detalhes</h3>
-                <p class="products__detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus praesentium aliquam minima sed corrupti eum quaerat eveniet delectus odio libero rem, doloribus explicabo culpa perferendis odit facilis id iste eius?</p>
+                <p class="products__detail">{{$product->body}}</p>
             </div>
         </div>
     </section>

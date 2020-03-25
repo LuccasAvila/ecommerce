@@ -457,3 +457,9 @@ ul {
     text-align: justify;
     margin: 8px 0;
 }
+
+.product__image {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+}

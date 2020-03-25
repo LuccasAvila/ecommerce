@@ -18,6 +18,7 @@ class HomeController extends Controller
     }
 
     public function show($slug) {
-        return view('store.product');
+        $product = Product::where('slug', $slug)->first();
+        return view('store.product', compact('product'));
     }
 }
