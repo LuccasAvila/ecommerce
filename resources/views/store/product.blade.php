@@ -37,7 +37,8 @@
                             @enderror
                         </div>
                         @php
-                            $cartItems = array_column(session()->get('cart'), 'id');
+                            $cartItems = session()->has('cart') ?
+                                array_column(session()->get('cart'), 'id') : [];
                         @endphp
                         @if(!in_array($product->id, $cartItems))
                         <button class="products__add-cart">
