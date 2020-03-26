@@ -53,7 +53,7 @@
                 <div class="cart__info">
                     <p class="cart__title">MEU CARRINHO</p>
                     @php
-                        $cart = session()->get('cart');
+                        $cart = session()->get('cart') ?? [];
                         $total = 0;
                         foreach ($cart as $item) {
                             $total += $item['price'] * $item['amount'];

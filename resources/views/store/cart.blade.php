@@ -31,7 +31,7 @@
                     @endphp
                     <tr>
                         <td>
-                            @if($item->photos()->count() && $item->photos()->first->image)
+                            @if($item->photos()->count() && $item->photos()->first()->image)
                                 <img class="cart__image" src="{{asset('storage/'.$item->photos()->first()->image)}}" alt="Product" />
                             @else
                                 <img class="cart__image" src="https://via.placeholder.com/72" />
