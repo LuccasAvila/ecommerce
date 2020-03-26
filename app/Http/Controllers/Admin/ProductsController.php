@@ -109,6 +109,20 @@ class ProductsController extends Controller
         //
     }
 
+    public function visibility($id) {
+        $product = Product::find($id);
+        $product->visible = !$product->visible;
+        $product->save();
+        return redirect()->back();
+    }
+
+    public function featured($id) {
+        $product = Product::find($id);
+        $product->featured = !$product->featured;
+        $product->save();
+        return redirect()->back();
+    }
+
     protected function uploadPhoto($images, $column) {
         $uploadedPhotos = [];
 

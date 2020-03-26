@@ -27,14 +27,32 @@
             <tr>
                 <td>{{$product->id}}</td>
                 <td>
-                @if($product->photos()->exists())
+                @if($product->photos() && $product->photos()->first()->image)
                 <img class="products__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->description}}">
+                @else
+                <img class="products__image" src="https://via.placeholder.com/72" alt="{{$product->description}}">
                 @endif
                 </td>
                 <td>{{$product->name}}</td>
                 <td>R$ {{$product->price}}</td>
-                <td><span class="fas fa-check"></span></td>
-                <td><span class="fas fa-times"></span></td>
+                <td>
+                    <a href="{{route('admin.products.visible', ['product' => $product->id])}}">
+                        @if($product->visible)
+                        <span class="fas fa-check"></span>
+                        @else
+                        <span class="fas fa-times"></span>
+                        @endif
+                    </a>
+                </td>
+                <td>
+                    <a href="{{route('admin.products.featured', ['product' => $product->id])}}">
+                        @if($product->featured)
+                        <span class="fas fa-check"></span></a>
+                        @else
+                        <span class="fas fa-times"></span>
+                        @endif
+                    </a>
+                </td>
                 <td>
                     <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="table__action table__action--primary"><span class="fas fa-pen"></span></a>
                 </td>

@@ -31,6 +31,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::group(['middleware' => ['auth', 'admin']], function() {
         Route::get('/', 'Admin\\HomeController@index')->name('index');
         Route::resource('products', 'Admin\\ProductsController');
+        Route::get('products/visible/{product}', 'Admin\\ProductsController@visibility')->name('products.visible');
+        Route::get('products/featured/{product}', 'Admin\\ProductsController@featured')->name('products.featured');
+
         Route::resource('categories', 'Admin\\CategoriesController');
         Route::post('/productPhoto/delete', 'Admin\\ProductPhotoController@destroy')->name('productPhoto.delete');
     });

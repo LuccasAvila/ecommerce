@@ -61,6 +61,7 @@
     </ul>
 </section>
 
+@if($newProducts)
 <section class="products">
     <div class="container">
         <h1 class="products__section-title">Novos Produtos</h1>
@@ -87,4 +88,5 @@
         </ul>
     </div>
 </section>
+@endif
 @endsection
