@@ -68,7 +68,7 @@
             @foreach($newProducts as $product)
             <li class="products__item">
                 <a href="{{route('product', ['slug' => $product->slug])}}">
-                    @if($product->photos()->first()->image)
+                    @if($product->photos()->count() && $product->photos()->first()->image)
                     <img class="products__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->name}}">
                     @else
                     <img class="products__image" src="https://via.placeholder.com/260" alt="{{$product->name}}">

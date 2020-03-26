@@ -30,7 +30,13 @@
                         $total += $subtotal;
                     @endphp
                     <tr>
-                        <td><img class="cart__image" src="{{asset('storage/'.$item->photos()->first()->image)}}" alt="Product"></td>
+                        <td>
+                            @if($item->photos()->count() && $item->photos()->first->image)
+                                <img class="cart__image" src="{{asset('storage/'.$item->photos()->first()->image)}}" alt="Product" />
+                            @else
+                                <img class="cart__image" src="https://via.placeholder.com/72" />
+                            @endif
+                        </td>
                         <td>R$ {{number_format($item->price, 2, ',', '.')}}</td>
                         <td>{{$item->amount}}</td>
                         <td>R$ {{number_format($subtotal, 2, ',', '.')}}</td>

@@ -10,7 +10,7 @@
         <div class="section__content">
             <div class="section__wrapper">
                 <div class="section__left">
-                    @if($product->photos()->first()->image)
+                    @if($product->photos()->count() && $product->photos()->first()->image)
                     <img class="product__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->name}}">
                     @else
                     <img class="product__image" src="https://via.placeholder.com/260" alt="{{$product->name}}">
