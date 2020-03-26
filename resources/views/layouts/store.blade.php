@@ -52,7 +52,14 @@
                 </div>
                 <div class="cart__info">
                     <p class="cart__title">MEU CARRINHO</p>
-                    <p class="cart__items">0 item(s) - R$ 0,00</p>
+                    @php
+                        $cart = session()->get('cart');
+                        $total = 0;
+                        foreach ($cart as $item) {
+                            $total += $item['price'] * $item['amount'];
+                        }
+                    @endphp
+                    <p class="cart__items">{{count($cart)}} item(s) - R$ {{number_format($total, 2, ',', '.')}}</p>
                 </div>
             </a>
         </div>

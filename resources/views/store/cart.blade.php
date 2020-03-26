@@ -9,6 +9,7 @@
             <h1>Meu carrinho</h1>
         </div>
         <div class="section__content">
+            @if($cart)
             <table class="cart__list">
                 <thead>
                     <tr class="cart__header">
@@ -38,6 +39,10 @@
                     @endforeach
                 </tbody>
             </table>
+            @else
+            <div class="alert">Não há nenhum item no carrinho!</div>
+            @endif
+            @if($cart)
             <div class="section__row">
                 <div class="coupon">
                     <input class="coupon__input" placeholder="Adicione um cupom de desconto" type="text">
@@ -56,6 +61,7 @@
                 </table>
                 <a class="button button--secondary" href="#">Finalizar compras</a>
             </div>
+            @endif
         </div>
     </div>
 </div>

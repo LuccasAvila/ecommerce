@@ -340,6 +340,10 @@ ul {
     transition: .4s;
 }
 
+.products__add-cart:disabled {
+    background: #e6cb83;
+}
+
 .products__add-cart:hover {
     background: #1F2232;
     color: #FACF5A;
@@ -386,6 +390,10 @@ ul {
     text-align: center;
     border-collapse: collapse;
     background: #fff;
+}
+
+.cart__list td {
+    height: 78px;
 }
 
 .cart__body {
