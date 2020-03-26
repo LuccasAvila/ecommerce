@@ -10,18 +10,18 @@ class CartController extends Controller
     public function index() {
         $cart = [];
         if(session()->has('cart')) {
-            foreach(session()->get('cart') as $product) {
-                $item = Product::find($product['id']);
-                $item['amount'] = $product['amount'];
-                array_push($cart, $item);
-            }
+            $cart = session()->get('cart');
         }
 
         return view('store.cart', compact('cart'));
     }
 
     public function add(Request $request) {
-        $product = $request->get('product');
+        $data = $request->get('product');
+        $product = Product::whereSlug($data['slug'])->first();
+        if(!$product || $data['amount'] <= 0)
+            return redirect()->back();
+        $product['amount'] = $data['amount'];
 
         if(session()->has('cart')) {
             session()->push('cart', $product);
@@ -33,15 +33,14 @@ class CartController extends Controller
     }
 
 
-    public function remove($id) {
+public function remove($slug) {
         if(session()->has('cart')) {
             $cart = session()->get('cart');
-            $cart = array_filter($cart, function($item) use($id) {
-                return $item['id'] !== $id;
+            $cart = array_filter($cart, function($item) use($slug) {
+                return $item->slug !== $slug;
             });
             session()->put('cart', $cart);
         }
-
 
         return redirect()->route('cart.index');
     }
