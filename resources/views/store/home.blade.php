@@ -61,12 +61,40 @@
     </ul>
 </section>
 
-@if($newProducts)
+@if($newProducts->count())
 <section class="products">
     <div class="container">
         <h1 class="products__section-title">Novos Produtos</h1>
         <ul class="products__list">
             @foreach($newProducts as $product)
+            <li class="products__item">
+                <a href="{{route('product', ['slug' => $product->slug])}}">
+                    @if($product->photos()->count() && $product->photos()->first()->image)
+                    <img class="products__image" src="{{asset('storage/'.$product->photos()->first()->image)}}" alt="{{$product->name}}">
+                    @else
+                    <img class="products__image" src="https://via.placeholder.com/260" alt="{{$product->name}}">
+                    @endif
+                </a>
+                <div class="products__info">
+                    <p class="products__category">{{$product->categories()->first()->name}}</p>
+                    <a href="{{route('product', ['slug' => $product->slug])}}" class="products__title">{{$product->name}}</a>
+                    <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
+                </div>
+                <button class="products__add-cart">
+                    <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
+                </button>
+            </li>
+            @endforeach
+        </ul>
+    </div>
+</section>
+@endif
+@if($featuredProducts->count())
+<section class="products">
+    <div class="container">
+        <h1 class="products__section-title">Produtos em destaque</h1>
+        <ul class="products__list">
+            @foreach($featuredProducts as $product)
             <li class="products__item">
                 <a href="{{route('product', ['slug' => $product->slug])}}">
                     @if($product->photos()->count() && $product->photos()->first()->image)

@@ -13,8 +13,10 @@ class HomeController extends Controller
         $categories = $categories->limit(7)->orderBy('id', 'DESC')->get();
 
         $product = new Product();
-        $newProducts = $product->limit(4)->orderBy('id', 'DESC')->get();
-        return view('store.home', compact('categories', 'newProducts'));
+        $newProducts = $product->where('visible', 1)->limit(4)->orderBy('id', 'DESC')->get();
+        $featuredProducts = $product->where('featured', 1)->limit(4)->orderBy('id', 'DESC')->get();
+
+        return view('store.home', compact('categories', 'newProducts', 'featuredProducts'));
     }
 
     public function show($slug) {
