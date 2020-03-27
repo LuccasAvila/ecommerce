@@ -28,11 +28,11 @@
 
 ## About The Project
 
-This is only an e-commerce project made for laravel study purposes.
+This is only a simple e-commerce project made for laravel study purposes.
 
 ### Built With
 
-- [Laravel](https://laravel.com/)
+- [Laravel 7](https://laravel.com/)
 
 <!-- GETTING STARTED -->
 
@@ -64,7 +64,22 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Start the local development server and enjoy ^^
+5. Run the migration to generate the database tables
+```sh
+php artisan migrate
+```
+
+(optional) If you wanted some test data, run the command:
+```sh
+php artisan db:seed
+```
+
+6. Create a symbolic link to storage public folder
+```sh
+php artisan storage:link
+```
+
+7. Start the local development server and enjoy ^^
 ```sh
 php artisan serve
 ```
