@@ -155,16 +155,29 @@ a {
     background-color: #f6f6f6;
 }
 
+.table__actions {
+    display: flex;
+}
+
 .table__action {
     padding: 8px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
     display: inline-block;
+    width: 42px;
+    text-align: center;
+    margin: 0 2px;
 }
 
 .table__action--primary {
     background: #FACF5A;
+    color: #1F2232;
+    border: 2px solid #1F2232;
+}
+
+.table__action--danger {
+    background: #F95959;
     color: #1F2232;
     border: 2px solid #1F2232;
 }
