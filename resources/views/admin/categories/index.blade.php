@@ -25,7 +25,14 @@
                 <td>{{$category->name}}</td>
                 <td>{{$category->description}}</td>
                 <td>
-                    <a href="{{route('admin.categories.edit', ['category' => $category->id])}}" class="table__action table__action--primary"><span class="fas fa-pen"></span></a>
+                    <div class="table__actions">
+                        <a href="{{route('admin.categories.edit', ['category' => $category->id])}}" class="table__action table__action--primary"><span class="fas fa-pen"></span></a>
+                        <form method="POST" action="{{route('admin.categories.destroy', ['category' => $category->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="table__action table__action--danger"><span class="fas fa-trash"></span></button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             @endforeach

@@ -96,7 +96,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category = $this->category->find();
+        $category = $this->category->find($id);
         $category->delete();
+
+        return redirect()->back();
     }
 }
