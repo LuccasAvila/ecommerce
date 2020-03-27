@@ -40,12 +40,12 @@
                                 array_column(session()->get('cart'), 'id') : [];
                         @endphp
                         @if(!in_array($product->id, $cartItems))
-                        <button class="products__add-cart">
-                            <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
+                        <button class="products__button">
+                            <span class="fas fa-shopping-cart products__button-icon"></span>Adicionar ao carrinho
                         </button>
                         @else
-                        <button disabled class="products__add-cart">
-                            <span class="fas fa-shopping-cart products__add-icon"></span>Produto já no carrinho
+                        <button disabled class="products__button">
+                            <span class="fas fa-shopping-cart products__button-icon"></span>Produto já no carrinho
                         </button>
                         @endif
                     </form>

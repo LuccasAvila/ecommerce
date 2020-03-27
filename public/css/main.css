@@ -329,7 +329,7 @@ ul {
     margin: 4px 0;
 }
 
-.products__add-cart {
+.products__button {
     font-size: 1rem;
     background: #FACF5A;
     color: #333;
@@ -338,20 +338,21 @@ ul {
     margin-top: 8px;
     margin-bottom: 16px;
     transition: .4s;
+    display: inline-block;
 }
 
-.products__add-cart:disabled {
+.products__button:disabled {
     background: #e6cb83;
 }
 
-.products__add-cart:hover {
+.products__button:hover {
     background: #1F2232;
     color: #FACF5A;
     cursor: pointer;
 }
 
 
-.products__add-icon {
+.products__button-icon {
     margin-right: 8px;
 }
 

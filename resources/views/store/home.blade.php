@@ -82,9 +82,9 @@
                     <a href="{{route('product', ['slug' => $product->slug])}}" class="products__title">{{$product->name}}</a>
                     <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
                 </div>
-                <button class="products__add-cart">
-                    <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
-                </button>
+                <a href="{{route('product', ['slug' => $product->slug])}}" class="products__button">
+                    <span class="fas fa-eye products__button-icon"></span>Detalhes do produto
+                </a>
             </li>
             @endforeach
         </ul>
@@ -110,9 +110,9 @@
                     <a href="{{route('product', ['slug' => $product->slug])}}" class="products__title">{{$product->name}}</a>
                     <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
                 </div>
-                <button class="products__add-cart">
-                    <span class="fas fa-eye products__add-icon"></span>Detalhes do produto
-                </button>
+                <a href="{{route('product', ['slug' => $product->slug])}}" class="products__button">
+                    <span class="fas fa-eye products__button-icon"></span>Detalhes do produto
+                </a>
             </li>
             @endforeach
         </ul>
