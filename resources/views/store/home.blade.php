@@ -5,11 +5,13 @@
     <aside class="categories">
         <h2 class="categories__title">Categorias</h2>
         <ul class="categories__list">
-            @foreach ($categories as $category)
+            @forelse ($categories as $category)
             <li class="categories__item">
                 <a href="#" class="categories__link">{{$category->name}}</a>
             </li>
-            @endforeach
+            @empty
+            <li>Não existe uma categoria</li>
+            @endforelse
             <li class="categories__item">
                 <a href="#" class="categories__link">Ver todas categorias</a>
             </li>
@@ -76,7 +78,7 @@
                     @endif
                 </a>
                 <div class="products__info">
-                    <p class="products__category">{{$product->categories()->first()->name}}</p>
+                    <p class="products__category">{{$product->categories()->first()->name ?? 'Sem categoria'}}</p>
                     <a href="{{route('product', ['slug' => $product->slug])}}" class="products__title">{{$product->name}}</a>
                     <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
                 </div>
@@ -104,12 +106,12 @@
                     @endif
                 </a>
                 <div class="products__info">
-                    <p class="products__category">{{$product->categories()->first()->name}}</p>
+                    <p class="products__category">{{$product->categories()->first()->name ?? 'Sem categoria'}}</p>
                     <a href="{{route('product', ['slug' => $product->slug])}}" class="products__title">{{$product->name}}</a>
                     <p class="products__price">R$ {{number_format($product->price, 2, ',', '.')}}</p>
                 </div>
                 <button class="products__add-cart">
-                    <span class="fas fa-shopping-cart products__add-icon"></span>Adicionar ao carrinho
+                    <span class="fas fa-eye products__add-icon"></span>Detalhes do produto
                 </button>
             </li>
             @endforeach
